@@ -35,33 +35,19 @@ class PeopleViewController: UITableViewController{
         // Do any additional setup after loading the view.
         
         let url = URL(string: "https://swapi.dev/api/people/?format=json")
-//        getData(from: url)
-        
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: url!, completionHandler: {
+
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: {
             data, response, error in
-            
-//            if let data = data {
-//                if let person = try? JSONDecoder().decode([People].self, from: data){
-//                    print(person)
-//                }
-//            }
+            guard let myData = data else { return }
             
             do{
-                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
+                if let jsonResult = try JSONSerialization.jsonObject(with: myData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
 
-                    if let results = jsonResult["results"] {
+                    if let results = jsonResult["results"]{
                         let resultsArray = results as! NSArray
                         for result in resultsArray{
                             let person = result as! NSDictionary
-                            for p in person{
-                                if p.key != nil, p.key as! String == "name"{
-                                    if p.value != nil {
-                                        self.people.append(p.value as! String)
-                                    }
-                                }
-                            }
+                            self.people.append(person["name"] as! String)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
