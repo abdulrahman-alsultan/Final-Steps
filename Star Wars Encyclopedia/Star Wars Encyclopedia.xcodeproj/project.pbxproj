@@ -16,6 +16,8 @@
 		848C93C527707B8E001F5C17 /* Star_Wars_EncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C93C427707B8E001F5C17 /* Star_Wars_EncyclopediaTests.swift */; };
 		848C93CF27707B8E001F5C17 /* Star_Wars_EncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C93CE27707B8E001F5C17 /* Star_Wars_EncyclopediaUITests.swift */; };
 		848C93D127707B8E001F5C17 /* Star_Wars_EncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C93D027707B8E001F5C17 /* Star_Wars_EncyclopediaUITestsLaunchTests.swift */; };
+		848C941A27722BDD001F5C17 /* FilmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C941927722BDD001F5C17 /* FilmTableViewController.swift */; };
+		848C941C27722C03001F5C17 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C941B27722C03001F5C17 /* FilmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		848C93CA27707B8E001F5C17 /* Star Wars EncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Star Wars EncyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848C93CE27707B8E001F5C17 /* Star_Wars_EncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_EncyclopediaUITests.swift; sourceTree = "<group>"; };
 		848C93D027707B8E001F5C17 /* Star_Wars_EncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_EncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		848C941927722BDD001F5C17 /* FilmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewController.swift; sourceTree = "<group>"; };
+		848C941B27722C03001F5C17 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				848C93B627707B8D001F5C17 /* Assets.xcassets */,
 				848C93B827707B8D001F5C17 /* LaunchScreen.storyboard */,
 				848C93BB27707B8D001F5C17 /* Info.plist */,
+				848C941927722BDD001F5C17 /* FilmTableViewController.swift */,
+				848C941B27722C03001F5C17 /* FilmModel.swift */,
 			);
 			path = "Star Wars Encyclopedia";
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			files = (
 				848C93B227707B8C001F5C17 /* PeopleViewController.swift in Sources */,
 				848C93AE27707B8C001F5C17 /* AppDelegate.swift in Sources */,
+				848C941C27722C03001F5C17 /* FilmModel.swift in Sources */,
 				848C93B027707B8C001F5C17 /* SceneDelegate.swift in Sources */,
+				848C941A27722BDD001F5C17 /* FilmTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,27 +8,9 @@
 import UIKit
 
 
-struct People: Codable{
-    var name: String
-}
-
-
-
 class PeopleViewController: UITableViewController{
     
-    var people: [String] = []
-    
-//    func getData(from url: String){
-//        URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
-//            guard let data = data, error == nil else{
-//                print("something went wrong")
-//                return
-//            }
-//
-//
-//
-//        })
-//    }
+    var people: [String]? = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,20 +30,17 @@ class PeopleViewController: UITableViewController{
                         for result in resultsArray{
                             let person = result as! NSDictionary
                             guard let name = person["name"] as? String else { return }
-                            self.people.append(name)
+                            self.people?.append(name)
                         }
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
                     }
-
                 }
             }catch{
                 print(error)
             }
-            
         })
-        
         task.resume()
         tableView.dataSource = self
     }
@@ -75,14 +54,14 @@ class PeopleViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
+        return people?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             // Create a generic cell
             let cell = UITableViewCell()
             // set the default cell label to the corresponding element in the people array
-            cell.textLabel?.text = people[indexPath.row]
+            cell.textLabel?.text = people? [indexPath.row] ?? ""
             // return the cell so that it can be rendered
             return cell
         }
