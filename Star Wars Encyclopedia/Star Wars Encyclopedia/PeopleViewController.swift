@@ -47,10 +47,11 @@ class PeopleViewController: UITableViewController{
                         let resultsArray = results as! NSArray
                         for result in resultsArray{
                             let person = result as! NSDictionary
-                            self.people.append(person["name"] as! String)
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
+                            guard let name = person["name"] as? String else { return }
+                            self.people.append(name)
+                        }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
                         }
                     }
 
@@ -62,6 +63,7 @@ class PeopleViewController: UITableViewController{
         })
         
         task.resume()
+        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
