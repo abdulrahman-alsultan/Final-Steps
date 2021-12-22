@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		84761563277393E600F9DF02 /* StarWarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84761562277393E600F9DF02 /* StarWarModel.swift */; };
 		84761565277395A800F9DF02 /* PeoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84761564277395A800F9DF02 /* PeoleModel.swift */; };
+		847615672773C54400F9DF02 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847615662773C54400F9DF02 /* DetailsViewController.swift */; };
 		848C93AE27707B8C001F5C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C93AD27707B8C001F5C17 /* AppDelegate.swift */; };
 		848C93B027707B8C001F5C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C93AF27707B8C001F5C17 /* SceneDelegate.swift */; };
 		848C93B227707B8C001F5C17 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C93B127707B8C001F5C17 /* PeopleViewController.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		84761562277393E600F9DF02 /* StarWarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarModel.swift; sourceTree = "<group>"; };
 		84761564277395A800F9DF02 /* PeoleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoleModel.swift; sourceTree = "<group>"; };
+		847615662773C54400F9DF02 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		848C93AA27707B8C001F5C17 /* Star Wars Encyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars Encyclopedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848C93AD27707B8C001F5C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848C93AF27707B8C001F5C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				848C941B27722C03001F5C17 /* FilmModel.swift */,
 				84761562277393E600F9DF02 /* StarWarModel.swift */,
 				84761564277395A800F9DF02 /* PeoleModel.swift */,
+				847615662773C54400F9DF02 /* DetailsViewController.swift */,
 			);
 			path = "Star Wars Encyclopedia";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				848C93B227707B8C001F5C17 /* PeopleViewController.swift in Sources */,
 				848C93AE27707B8C001F5C17 /* AppDelegate.swift in Sources */,
 				848C941C27722C03001F5C17 /* FilmModel.swift in Sources */,
+				847615672773C54400F9DF02 /* DetailsViewController.swift in Sources */,
 				848C93B027707B8C001F5C17 /* SceneDelegate.swift in Sources */,
 				84761563277393E600F9DF02 /* StarWarModel.swift in Sources */,
 				84761565277395A800F9DF02 /* PeoleModel.swift in Sources */,

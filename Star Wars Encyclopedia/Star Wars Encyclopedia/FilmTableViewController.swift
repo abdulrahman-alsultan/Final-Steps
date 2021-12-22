@@ -56,5 +56,23 @@ class FilmTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "Film", sender: indexPath)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! DetailsViewController
+        
+        let indexPath = sender as! IndexPath
+        
+        guard let item = filmsList?[indexPath.row] else { return }
+        
+        destination.n = "Title: \(String(describing: item.title))"
+        destination.g = "Release Date: \(String(describing: item.releaseDate))"
+        destination.b = "Director: \(String(describing: item.director))"
+        destination.m = "Opening Craw: \(String(describing: item.openingCrawl))"
+    }
 
 }

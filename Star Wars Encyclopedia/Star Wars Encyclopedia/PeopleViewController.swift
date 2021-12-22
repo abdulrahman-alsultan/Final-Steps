@@ -56,7 +56,24 @@ class PeopleViewController: UITableViewController{
         cell.textLabel?.text = people?[indexPath.row].name
             // return the cell so that it can be rendered
             return cell
-        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "People", sender: indexPath)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! DetailsViewController
+        let indexPath = sender as! IndexPath
+        
+        guard let item = people?[indexPath.row] else { return }
+        
+        destination.n = "Name: \(String(describing: item.name))"
+        destination.g = "Gender: \(String(describing: item.gender))"
+        destination.b = "Birth Year: \(String(describing: item.birthYear))"
+        destination.m = "Mass: \(String(describing: item.mass))"
+    }
 
 }
 
