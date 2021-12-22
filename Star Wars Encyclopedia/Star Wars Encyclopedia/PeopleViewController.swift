@@ -10,38 +10,30 @@ import UIKit
 
 class PeopleViewController: UITableViewController{
     
-    var people: [String]? = []
+    var people: [FilmResult]? = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let url = URL(string: "https://swapi.dev/api/people/?format=json")
-
-        let task = URLSession.shared.dataTask(with: url!, completionHandler: {
+        StarWarModel.getAllPeople(completionHandler: {
             data, response, error in
+            
             guard let myData = data else { return }
             
             do{
-                if let jsonResult = try JSONSerialization.jsonObject(with: myData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
+                let decoder = JSONDecoder()
+                let jsonResult = try decoder.decode(People.self, from: myData)
 
-                    if let results = jsonResult["results"]{
-                        let resultsArray = results as! NSArray
-                        for result in resultsArray{
-                            let person = result as! NSDictionary
-                            guard let name = person["name"] as? String else { return }
-                            self.people?.append(name)
-                        }
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
+                self.people = jsonResult.results
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
+                
             }catch{
                 print(error)
             }
         })
-        task.resume()
         tableView.dataSource = self
     }
 
@@ -61,7 +53,7 @@ class PeopleViewController: UITableViewController{
             // Create a generic cell
             let cell = UITableViewCell()
             // set the default cell label to the corresponding element in the people array
-            cell.textLabel?.text = people? [indexPath.row] ?? ""
+        cell.textLabel?.text = people?[indexPath.row].name
             // return the cell so that it can be rendered
             return cell
         }

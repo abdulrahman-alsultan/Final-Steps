@@ -14,10 +14,7 @@ class FilmTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url = URL(string: "https://swapi.dev/api/films/?format=json")
-        
-        let task = URLSession.shared.dataTask(with: url!, completionHandler: {
+        StarWarModel.getAllFilms(completionHandler: {
             data, response, error in
             
             guard let myData = data else { return }
@@ -36,7 +33,7 @@ class FilmTableViewController: UITableViewController {
             }
         })
         
-        task.resume()
+            
         self.tableView.dataSource = self
         
     }
